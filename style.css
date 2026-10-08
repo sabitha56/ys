@@ -1,0 +1,94 @@
+:root{
+  --primary:#1e5bd8;--primary-dark:#143f9c;--bg:#ffffff;--alt:#f1f6ff;
+  --card:#ffffff;--text:#1b2740;--muted:#6b7a99;--border:#dbe5f7;--shadow:0 6px 20px rgba(30,91,216,.12);
+}
+body.dark{
+  --bg:#0d1426;--alt:#111b33;--card:#16213d;--text:#e8eefc;--muted:#9fb0d3;--border:#263454;--shadow:0 6px 20px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+.hidden{display:none!important}
+.muted{color:var(--muted)}
+a{color:var(--primary);text-decoration:none}
+
+/* Login */
+.login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:linear-gradient(135deg,#1e5bd8,#5b9bff 60%,#eaf2ff)}
+.login-box{background:var(--card);width:100%;max-width:400px;padding:36px 30px;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.25);animation:rise .6s ease}
+.login-box .logo{text-align:center;font-size:1.8rem}
+.login-box .muted{text-align:center;margin-bottom:20px}
+.login-links{display:flex;justify-content:space-between;margin-top:16px;font-size:.9rem}
+.hint{margin-top:16px;text-align:center;font-size:.8rem;color:var(--muted)}
+.logo{font-weight:700;font-size:1.4rem;color:var(--primary)}
+.logo span{color:var(--text)}
+
+/* Forms */
+label{display:block;margin:12px 0 4px;font-weight:600;font-size:.9rem}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit;transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,91,216,.2)}
+.error{display:block;color:#d93636;font-size:.8rem;min-height:16px}
+.btn{display:inline-block;margin-top:14px;padding:11px 24px;background:var(--primary);color:#fff;border:none;border-radius:8px;font:inherit;font-weight:600;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.small{margin:0;padding:7px 16px}
+.login-box .btn{width:100%}
+
+/* Navbar */
+.navbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 5%;background:var(--card);box-shadow:var(--shadow)}
+nav{display:flex;align-items:center;gap:20px}
+nav a{color:var(--text);font-weight:500;position:relative}
+nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--primary);transition:width .3s}
+nav a:hover::after{width:100%}
+.menu-btn,.icon-btn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.menu-btn{display:none}
+
+/* Sections */
+.section{padding:70px 5%}
+.section.alt{background:var(--alt)}
+.section h2{text-align:center;font-size:2rem;margin-bottom:8px;color:var(--primary)}
+.section h2::after{content:'';display:block;width:60px;height:3px;background:var(--primary);margin:8px auto 28px;border-radius:3px}
+.section>.muted{text-align:center;margin-top:-18px;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1100px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;animation:rise .6s ease both}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(30,91,216,.22)}
+.stat{text-align:center;border-top:4px solid var(--primary)}
+.stat h3{font-size:2.4rem;color:var(--primary)}
+.job h3{color:var(--primary);margin-bottom:6px}
+.tag{display:inline-block;padding:2px 10px;margin:4px 4px 10px 0;font-size:.75rem;background:var(--alt);color:var(--primary);border-radius:20px;border:1px solid var(--border)}
+.job .btn{width:100%;text-align:center}
+.filters{display:flex;gap:12px;max-width:700px;margin:0 auto 28px}
+.filters select{max-width:160px}
+.form,.profile,#about .card{max-width:800px;margin:0 auto}
+.form:hover{transform:none}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.profile{display:flex;align-items:center;gap:24px}
+.avatar{flex:none;width:90px;height:90px;border-radius:50%;background:var(--primary);color:#fff;font-size:2.4rem;display:flex;align-items:center;justify-content:center}
+.mini{margin-top:20px;text-align:center;grid-template-columns:repeat(3,1fr)}
+.mini b{font-size:1.8rem;color:var(--primary)}
+.table-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+th{background:var(--alt);color:var(--primary)}
+tr:hover td{background:var(--alt)}
+.badge{padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:600;color:#fff}
+.Pending{background:#e0a100}.Reviewed{background:#1e5bd8}.Interview{background:#7b4fd8}.Selected{background:#1f9d55}.Rejected{background:#d93636}
+footer{background:#0f2a66;color:#dbe6ff;text-align:center;padding:28px 5%}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal-box{background:var(--card);width:100%;max-width:400px;padding:28px;border-radius:14px;position:relative;animation:pop .3s ease}
+.modal-box h3{color:var(--primary);margin-bottom:10px}
+.close{position:absolute;top:10px;right:16px;font-size:1.6rem;cursor:pointer;color:var(--muted)}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+@media(max-width:800px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:14px;padding:18px 5%;background:var(--card);box-shadow:var(--shadow)}
+  nav.open{display:flex}
+  .row{grid-template-columns:1fr}
+  .profile{flex-direction:column;text-align:center}
+  .filters{flex-direction:column}
+  .filters select{max-width:100%}
+}

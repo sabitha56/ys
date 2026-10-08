@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TalentBridge | Recruitment System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<section id="loginPage" class="login-page">
+  <div class="login-box">
+    <div class="logo">Talent<span>Bridge</span></div>
+    <p class="muted">Sign in to your recruitment portal</p>
+    <form id="loginForm" novalidate>
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Enter username">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password">
+      <small class="error" id="loginError"></small>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <div class="login-links">
+      <a href="#" id="forgotUser">Forgot Username?</a>
+      <a href="#" id="forgotPass">Forgot Password?</a>
+    </div>
+    <p class="hint">Demo login: <b>admin</b> / <b>admin123</b></p>
+  </div>
+</section>
+
+<!-- MAIN SITE -->
+<div id="mainSite" class="hidden">
+  <header class="navbar">
+    <div class="logo">Talent<span>Bridge</span></div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+    <nav id="navMenu">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#jobs">Jobs</a>
+      <a href="#apply">Apply</a>
+      <a href="#profile">Profile</a>
+      <a href="#status">Status</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="darkToggle" class="icon-btn" title="Toggle dark mode">&#127763;</button>
+      <button id="logoutBtn" class="btn small">Logout</button>
+    </nav>
+  </header>
+
+  <section id="dashboard" class="section">
+    <h2>Dashboard</h2>
+    <p class="muted" id="welcome"></p>
+    <div class="grid">
+      <div class="card stat"><h3 id="statJobs">0</h3><p>Total Jobs</p></div>
+      <div class="card stat"><h3 id="statApps">0</h3><p>Applications Submitted</p></div>
+      <div class="card stat"><h3 id="statInt">0</h3><p>Interviews Scheduled</p></div>
+      <div class="card stat"><h3 id="statSel">0</h3><p>Selected Candidates</p></div>
+    </div>
+  </section>
+
+  <section id="jobs" class="section alt">
+    <h2>Job Vacancies</h2>
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Search by job title or keyword...">
+      <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option>Full Time</option>
+        <option>Part Time</option>
+        <option>Remote</option>
+      </select>
+    </div>
+    <div class="grid" id="jobGrid"></div>
+    <p id="noJobs" class="muted hidden">No jobs match your search.</p>
+  </section>
+
+  <section id="apply" class="section">
+    <h2>Apply for a Job</h2>
+    <form id="applyForm" class="card form" novalidate>
+      <div class="row">
+        <div><label>Full Name</label><input type="text" id="fullName"><small class="error"></small></div>
+        <div><label>Email</label><input type="email" id="email"><small class="error"></small></div>
+      </div>
+      <div class="row">
+        <div><label>Phone Number</label><input type="tel" id="phone" placeholder="10 digits"><small class="error"></small></div>
+        <div><label>Qualification</label>
+          <select id="qualification">
+            <option value="">Select</option><option>Diploma</option><option>B.E / B.Tech</option>
+            <option>B.Sc / BCA</option><option>M.E / M.Tech</option><option>MBA / MCA</option>
+          </select><small class="error"></small></div>
+      </div>
+      <div class="row">
+        <div><label>Experience (years)</label><input type="number" id="experience" min="0" max="40"><small class="error"></small></div>
+        <div><label>Position Applied For</label><select id="position"></select><small class="error"></small></div>
+      </div>
+      <label>Resume Upload</label>
+      <input type="file" id="resume" accept=".pdf,.doc,.docx"><small class="error"></small>
+      <button type="submit" class="btn">Submit Application</button>
+    </form>
+  </section>
+
+  <section id="profile" class="section alt">
+    <h2>Candidate Profile</h2>
+    <div class="card profile">
+      <div class="avatar" id="avatar">?</div>
+      <div id="profileInfo"><p class="muted">Submit an application to see your profile here.</p></div>
+    </div>
+  </section>
+
+  <section id="status" class="section">
+    <h2>Application Status</h2>
+    <div class="card table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Name</th><th>Position</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody id="statusBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="about" class="section alt">
+    <h2>About Company</h2>
+    <div class="card">
+      <p>TalentBridge Solutions is a technology-driven recruitment company connecting skilled professionals with growing organizations. With a transparent hiring process and a people-first culture, we help candidates build careers they love.</p>
+      <div class="grid mini">
+        <div><b>500+</b><p>Companies</p></div>
+        <div><b>10k+</b><p>Placements</p></div>
+        <div><b>12</b><p>Years</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form id="contactForm" class="card form" novalidate>
+      <div class="row">
+        <div><label>Name</label><input type="text" id="cName"></div>
+        <div><label>Email</label><input type="email" id="cEmail"></div>
+      </div>
+      <label>Message</label>
+      <textarea id="cMsg" rows="4"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 TalentBridge Solutions. All rights reserved.</p>
+    <p>hr@talentbridge.example &bull; +91 90000 00000</p>
+  </footer>
+</div>
+
+<!-- POPUP -->
+<div class="modal hidden" id="modal">
+  <div class="modal-box">
+    <span class="close" id="modalClose">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
